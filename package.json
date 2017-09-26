@@ -1,0 +1,43 @@
+{
+  "name": "flow-base-project",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^3.19.0",
+    "eslint-config-google": "^0.7.0",
+    "eslint-plugin-html": "^2.0.0",
+    "flow-bin": "^0.54.1",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.1.0",
+    "gulp-shell": "^0.6.3",
+    "html-webpack-plugin": "^2.30.1",
+    "json-server": "^0.12.0",
+    "merge-stream": "^1.0.1",
+    "run-sequence": "^2.1.0",
+    "sw-precache": "^5.2.0",
+    "vinyl-fs": "^2.4.4",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2",
+    "webpack-merge": "^4.1.0",
+    "webpack-stream": "^4.0.0"
+  },
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "lint": "npm run lint:javascript && polymer lint",
+    "lint:javascript": "eslint . --ext js,html --ignore-path .gitignore",
+    "test": "polymer test",
+    "test:integration": "polymer build # test that psk builds without error with the CLI"
+  },
+  "dependencies": {
+    "@polymer/iron-flex-layout": "next",
+    "@polymer/paper-button": "next",
+    "@polymer/paper-styles": "next",
+    "@polymer/polymer": "next",
+    "@webcomponents/webcomponentsjs": "^1.0.13",
+    "axios": "^0.16.2"
+  }
+}
