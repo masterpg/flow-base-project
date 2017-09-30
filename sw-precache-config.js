@@ -13,8 +13,8 @@
 module.exports = {
   staticFileGlobs: [
     'node_modules/**/*',
-    "images/**/*",
-    "index.html",
+    'images/**/*',
+    'index.html',
     'app.bundle.*.js',
     'manifest.json'
   ],

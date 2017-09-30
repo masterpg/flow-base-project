@@ -6,6 +6,7 @@ const merge = require('merge-stream');
 const vfs = require('vinyl-fs');
 const shell = require('gulp-shell');
 const _ = require('lodash');
+const browserSync = require('browser-sync');
 
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
@@ -48,6 +49,17 @@ gulp.task('json-server', shell.task([
   './node_modules/.bin/json-server --watch ./server/db.json --port 5001',
 ]));
 
+gulp.task('browser-sync', () => {
+  browserSync.init({
+    port: 5000,
+    ui: {port: 5005},
+    open: false,
+    server: {
+      baseDir: "./public/",
+    }
+  });
+});
+
 /**
  * プロジェクトをクリーンします。
  */
@@ -72,7 +84,6 @@ gulp.task('serve', () => {
     ['webpack-dev-server', 'json-server']
   );
 });
-
 
 /**
  * 公開ディレクトリ(開発環境用)のクリーンを行います。
@@ -122,6 +133,15 @@ gulp.task('build-dev-resources', () => {
 //--------------------------------------------------
 //  本番環境用ビルド
 //--------------------------------------------------
+
+/**
+ * ビルド結果を検証するための開発サーバーを起動します。
+ */
+gulp.task('serve:prod', () => {
+  return runSequence(
+    ['browser-sync', 'json-server']
+  );
+});
 
 /**
  * 公開ディレクトリ(本番環境用)の構築を行います。
