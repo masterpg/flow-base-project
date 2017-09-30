@@ -4,25 +4,25 @@
 
 yarnをインストールします。
 
-```ShellSession
+```console
 $ npm install -g yarn
 ```
 
 プロジェクトの依存パッケージをインストールします。
 
-```ShellSession
+```console
 $ yarn install
 ```
 
 サードパーティのライブラリに対する型定義を探してダウンロードしてくれるツール[flow-typed](https://github.com/flowtype/flow-typed)をインストールします。
 
-```ShellSession
+```console
 $ npm install -g flow-typed
 ```
 
 `package.json`から依存関係をもとにflowの型定義をダウンロードします。
 
-```ShellSession
+```console
 $ flow-typed install
 ```
 
@@ -31,7 +31,7 @@ $ flow-typed install
 
 開発サーバーを起動します。
 
-```ShellSession
+```console
 $ gulp serve
 ```
 
@@ -42,13 +42,13 @@ $ gulp serve
 
 次のコマンドで本番環境を想定したプロジェクトをビルドすることができます。
 
-```ShellSession
+```console
 $ gulp build 
 ```
 
 ビルド結果を検証したい場合、次のコマンドでビルド結果の検証用サーバーを起動します。
 
-```ShellSession
+```console
 $ gulp serve:prod
 ```
 
