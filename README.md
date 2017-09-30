@@ -14,6 +14,18 @@ $ npm install -g yarn
 $ yarn install
 ```
 
+サードパーティのライブラリに対する型定義を探してダウンロードしてくれるツール[flow-typed](https://github.com/flowtype/flow-typed)をインストールします。
+
+```console
+$ npm install -g flow-typed
+```
+
+`package.json`から依存関係をもとにflowの型定義をダウンロードします。
+
+```console
+flow-typed install
+```
+
 
 ## 開発サーバー
 
@@ -23,7 +35,7 @@ $ yarn install
 $ gulp serve
 ```
 
-起動したらブラウザで`http://localhost:5000/`にアクセスすることで画面が表示されます。
+起動したらブラウザで http://localhost:5000/ にアクセスすることで画面が表示されます。
 
 
 ## プロジェクトビルド
@@ -40,5 +52,5 @@ $ gulp build
 $ gulp serve:prod
 ```
 
-起動したらブラウザで`http://localhost:5000/`にアクセスすることで画面が表示されます。
+起動したらブラウザで http://localhost:5000/ にアクセスすることで画面が表示されます。
 
