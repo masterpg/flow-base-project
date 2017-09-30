@@ -76,10 +76,11 @@ export class MyApp extends PolymerElement {
   __posts: api.Post[];
 
   async __buttonOnClick(e: mixed) {
-    this.__posts = await api.getPosts();
-    this.__posts.forEach((post, index, posts) => {
-      console.log('id:', post.id, ', title:', post.title, ', author:', post.author);
+    const posts = await api.getPosts();
+    posts.forEach((item, index, list) => {
+      console.log('id:', item.id, ', title:', item.title, ', author:', item.author);
     });
+    this.__posts = posts;
   }
 }
 
