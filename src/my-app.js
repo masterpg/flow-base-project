@@ -15,7 +15,7 @@ export class MyApp extends PolymerElement {
           display: block;
           margin: 10px;
         }
-        
+
         paper-button {
           font-size: 14px;
           color: var(--paper-indigo-500);
@@ -24,11 +24,11 @@ export class MyApp extends PolymerElement {
             padding: 0;
           }
         }
-        
+
         .posts {
           border-collapse: collapse; 
         }
-        
+
         .posts thead th {
           text-align: left;
           font-weight: normal;
@@ -37,7 +37,7 @@ export class MyApp extends PolymerElement {
         .posts thead th.id {
           width: 40px;
         }
-        
+
         .posts thead th.title {
           width: 150px;
         }
