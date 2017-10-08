@@ -8,9 +8,6 @@ const shell = require('gulp-shell');
 const _ = require('lodash');
 const browserSync = require('browser-sync');
 
-const webpackStream = require('webpack-stream');
-const webpack = require('webpack');
-
 //----------------------------------------------------------------------
 //
 //  Constants
@@ -46,6 +43,13 @@ gulp.task('flow', shell.task([
 ], {ignoreErrors: true}));
 
 /**
+ * json-serverを起動します。
+ */
+gulp.task('json-server', shell.task([
+  './node_modules/.bin/json-server --watch ./data/db.json --port 5001',
+]));
+
+/**
  * webpack-dev-serverを起動します。
  */
 gulp.task('webpack-dev-server', shell.task([
@@ -53,12 +57,8 @@ gulp.task('webpack-dev-server', shell.task([
 ]));
 
 /**
- * json-serverを起動します。
+ * browser-syncを起動します。
  */
-gulp.task('json-server', shell.task([
-  './node_modules/.bin/json-server --watch ./data/db.json --port 5001',
-]));
-
 gulp.task('browser-sync', () => {
   browserSync.init({
     port: 5000,
